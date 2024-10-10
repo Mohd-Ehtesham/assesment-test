@@ -1,0 +1,134 @@
+/* General body styles */
+.body {
+  background-color: #e5d9f2;
+  font-family: Arial, sans-serif;
+}
+
+/* Centered container */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.group {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Heading style */
+.heading {
+  font-size: x-large;
+  color: #f05a7e;
+  border: 3px solid #f05a7e;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Main box styling */
+.main-box {
+  width: 50%;
+  border: 3px solid #a594f9;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+}
+
+/* Upper div containing left and right side */
+.upper-div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Left and right box styling */
+.left-box,
+.right-box {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #f3f1f9;
+}
+
+/* Top half now contains three side-by-side sections */
+.top-half {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Styling for the three sections inside top-half */
+.unit,
+.discount,
+.price {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Bottom half styles */
+.bottom-half {
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* Lower div styling */
+.lower-div {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  background-color: #f3f1f9;
+  text-align: center;
+}
+
+/* setting the style of select */
+.select {
+  width: 7rem;
+  height: 2rem;
+}
+
+/* button styling */
+.button {
+  width: 50%;
+  height: 3.5rem;
+  border-radius: 1rem;
+  background-color: #c8a1e0;
+}
+
+.button:hover {
+  border-radius: 2rem;
+  background-color: #8c3dbd;
+}
+
+/* Original price with strikethrough effect */
+.strike-through {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.paragraph {
+  font-size: x-large;
+  color: #f05a7e;
+}
+
+.verticalMargin {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}

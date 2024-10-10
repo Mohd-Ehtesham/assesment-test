@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Boxes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="body">
+    <div class="container">
+      <div class="heading">YAY! It's BOGO</div>
+    </div>
+
+    <!-- for box 1 -->
+    <div class="container main-box" data-price="800" data-discount="10">
+      <!-- Upper Div -->
+      <div class="upper-div">
+        <!-- Left Side Div -->
+        <div class="left-box">
+          <div class="top-half">
+            <div class="unit">
+              <input type="checkbox" name="offer" />
+            </div>
+            <div class="discount">1 Unit</div>
+            <div class="price">10% Off</div>
+          </div>
+          <div class="bottom-half">Standard Price</div>
+        </div>
+        <!-- Right Side Div -->
+        <div class="right-box">
+          <div class="top-half">
+            <div class="price">INR 800</div>
+          </div>
+          <div class="bottom-half">INR 720</div>
+        </div>
+      </div>
+      <!-- Lower Div (Initially hidden) -->
+      <div class="lower-div hidden">
+        <div>
+          <p>Size</p>
+          <select name="size" id="size" class="select">
+            <option value="small">small</option>
+            <option value="medium">medium</option>
+            <option value="large">large</option>
+          </select>
+        </div>
+        <div>
+          <p>Color</p>
+          <select name="color" id="color" class="select">
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- for box 2 -->
+    <div
+      class="container verticalMargin main-box"
+      data-price="1600"
+      data-discount="50"
+    >
+      <!-- Upper Div -->
+      <div class="upper-div">
+        <div class="left-box">
+          <div class="top-half">
+            <div class="unit"><input type="checkbox" name="offer" /></div>
+            <div class="discount">2 Units</div>
+            <div class="price">50% Off</div>
+          </div>
+          <div class="bottom-half">Standard Price</div>
+        </div>
+        <div class="right-box">
+          <div class="top-half">
+            <!-- <div class="price">Most Popular</div> -->
+            <div class="price">INR 1600</div>
+          </div>
+          <div class="bottom-half">INR 800</div>
+        </div>
+      </div>
+      <div class="lower-div hidden">
+        <div>
+          <p>Size</p>
+          <select name="size" id="size" class="select">
+            <option value="small">small</option>
+            <option value="medium">medium</option>
+            <option value="large">large</option>
+          </select>
+        </div>
+        <div>
+          <p>Color</p>
+          <select name="color" id="color" class="select">
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- for box 3 -->
+    <div class="container main-box" data-price="2400" data-discount="30">
+      <div class="upper-div">
+        <div class="left-box">
+          <div class="top-half">
+            <div class="unit"><input type="checkbox" name="offer" /></div>
+            <div class="discount">3 Units</div>
+            <div class="price">30% Off</div>
+          </div>
+          <div class="bottom-half">Standard Price</div>
+        </div>
+        <div class="right-box">
+          <div class="top-half">
+            <div class="price">INR 2400</div>
+          </div>
+          <div class="bottom-half">INR 1680</div>
+        </div>
+      </div>
+      <div class="lower-div hidden">
+        <div>
+          <p>Size</p>
+          <select name="size" id="size" class="select">
+            <option value="small">small</option>
+            <option value="medium">medium</option>
+            <option value="large">large</option>
+          </select>
+        </div>
+        <div>
+          <p>Color</p>
+          <select name="color" id="color" class="select">
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Total Price -->
+    <div class="group">
+      <p class="paragraph">Free Delivery</p>
+      <p class="total-price">Total Price: INR 0</p>
+    </div>
+    <!-- Add to cart -->
+    <div class="container">
+      <button class="button">+ Add to cart</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
