@@ -1,16 +1,45 @@
 document.addEventListener("DOMContentLoaded", function () {
   const mainBoxes = document.querySelectorAll(".main-box");
-  const checkButtons = document.querySelectorAll('input[type="checkbox"]');
   const totalPriceElement = document.querySelector(".total-price");
+  const orderDetailsElement = document.querySelector(".order-details");
+  const checkButtons = document.querySelectorAll('input[type="checkbox"]');
 
   // Object to store the selected price for each box
   const selectedPrices = {};
 
+  // Object to store the order details for each box
+  const orderDetails = {};
+
   // Handle clicking on the main box to toggle the lower div
-  mainBoxes.forEach((box) => {
-    box.addEventListener("click", function () {
-      const lowerDiv = this.querySelector(".lower-div");
-      lowerDiv.classList.toggle("hidden");
+  mainBoxes.forEach((box, index) => {
+    const lowerDiv = box.querySelector(".lower-div");
+
+    // Add an event listener for clicks on the box
+    box.addEventListener("click", function (event) {
+      // Check if the clicked target is not a checkbox or select element
+      if (!event.target.closest('input[type="checkbox"], select')) {
+        lowerDiv.classList.toggle("hidden");
+      }
+    });
+
+    // Add event listeners for changes to the size and color select elements
+    const sizeSelect = box.querySelector('select[name="size"]');
+    const colorSelect = box.querySelector('select[name="color"]');
+
+    sizeSelect.addEventListener("change", function () {
+      orderDetails[index] = {
+        size: sizeSelect.value,
+        color: colorSelect.value,
+      };
+      updateOrderDetails();
+    });
+
+    colorSelect.addEventListener("change", function () {
+      orderDetails[index] = {
+        size: sizeSelect.value,
+        color: colorSelect.value,
+      };
+      updateOrderDetails();
     });
   });
 
@@ -21,6 +50,17 @@ document.addEventListener("DOMContentLoaded", function () {
       total += selectedPrices[price];
     }
     totalPriceElement.textContent = `Total Price: INR ${total}`;
+  }
+
+  // Function to update the order details
+  function updateOrderDetails() {
+    let orderDetailsText = "";
+    for (let index in orderDetails) {
+      orderDetailsText += `Box ${index + 1}: Size - ${
+        orderDetails[index].size
+      }, Color - ${orderDetails[index].color}\n`;
+    }
+    orderDetailsElement.textContent = orderDetailsText;
   }
 
   // Handle checkbox selection to apply or remove discount and update total price
@@ -49,6 +89,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // Recalculate the total price for all boxes
+      calculateTotalPrice();
+    });
+  });
+
+  // Add an event listener for clicks on the main box to update the total price
+  mainBoxes.forEach((box, index) => {
+    box.addEventListener("click", function () {
+      const basePrice = parseInt(box.getAttribute("data-price"), 10);
+      selectedPrices[index] = basePrice;
       calculateTotalPrice();
     });
   });

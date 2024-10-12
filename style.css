@@ -132,3 +132,19 @@
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
+
+.hidden {
+  display: none;
+}
+.popular {
+  position: relative;
+  bottom: 4rem;
+  left: 25rem;
+  color: red;
+  font-size: large;
+  border: 2px solid red;
+  margin: auto;
+  padding: 10px;
+  background-color: #ee8ea5;
+  border-radius: 5px;
+}
